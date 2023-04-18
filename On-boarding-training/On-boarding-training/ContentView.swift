@@ -20,11 +20,19 @@ struct ContentView: View {
             .navigationTitle("Home")
             .padding()
         }
+//        .onAppear(perform: deleteAppStorage)
         .fullScreenCover(isPresented: $shouldShowOnBoarding) {
             OnboardingView(shouldShowOnBoarding: $shouldShowOnBoarding)
         }
 
     }
+
+    /// Use this function to flush AppStorage and test the onBoarding again
+//    func deleteAppStorage() {
+//        if let bundleID = Bundle.main.bundleIdentifier {
+//            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+//        }
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
